@@ -82,7 +82,7 @@ while True:
         basic = BasicCalculator()
         numbers = input("Masukkan angka (jika lebih dari satu dipisahkan koma): ")
         basic.setNumber([int(num) for num in numbers.split(',')])
-        print("Angka:", basic.getNum1ber())
+        print("Angka:", basic.getNumber())
         print("Penjumlahan:", basic.add())
         print("Pengurangan:", basic.subtract())
         print("Perkalian:", basic.multiply())
