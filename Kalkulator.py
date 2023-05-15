@@ -56,13 +56,13 @@ class ScientificCalculator(Calculator):
         result = 1
         for num in self._number:
             result **= num
-        return 
+        return result
     
     def factorial(self, num):
         result = 1
         for i in range(1, num+1):
             result *= i
-        return 
+        return result
     
     def add(self, num1, num2):
         return num1 + num2
@@ -81,7 +81,7 @@ while True:
     elif choice == '1':
         basic = BasicCalculator()
         numbers = input("Masukkan angka (jika lebih dari satu dipisahkan koma): ")
-        basic.setNumber([int(num) for num in numbers.split(',')])
+        basic.setNumber([float(num) for num in numbers.split(',')])
         print("Angka:", basic.getNumber())
         print("Penjumlahan:", basic.add())
         print("Pengurangan:", basic.subtract())
@@ -90,11 +90,12 @@ while True:
     elif choice == '2':
         scientific = ScientificCalculator()
         numbers = input("Masukkan angka (jika lebih dari satu dipisahkan koma): ")
-        scientific.setNumber([int(num) for num in numbers.split(',')])
+        scientific.setNumber([float(num) for num in numbers.split(',')])
         print("Angka:", scientific.getNumber())
-        print("Penjumlahan:", scientific.add(20, 7))
         print("Eksponensial:", scientific.exponentiation())
-        print("Faktorial:", scientific.factorial(5))
-        print("Akar pangkat dua:", scientific.squareroot(16))
+        num_factorial = int(input("Masukkan angka untuk faktorial: "))
+        print("Faktorial:", scientific.factorial(num_factorial))
+        num_sqrt = float(input("Masukkan angka untuk akar pangkat dua: "))
+        print("Akar pangkat dua:", scientific.squareroot(num_sqrt))
     else:
         print("Input tidak sesuai, mohon coba lagi.")
